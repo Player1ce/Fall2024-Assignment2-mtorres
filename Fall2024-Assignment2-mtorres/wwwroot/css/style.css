@@ -1,0 +1,477 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of text areas.
+ */
+
+textarea {
+    /*resize: vertical ;*/
+}
+
+/* ==========================================================================
+   Author's custom fonts
+   ========================================================================== */
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+ /*<uniquifier>: Use a unique and descriptive class name*/
+ /*<weight>: Use a value from 100 to 400*/
+
+.playwrite-ca-normal {
+                   font-family: "Playwrite CA", cursive;
+                   font-optical-sizing: auto;
+                   font-weight: normal;
+                   font-style: normal;
+               }
+
+
+@font-face {
+    src:
+        /*url('fonts/dune_rise/Dune_Rise.otf') format('svg'), !* Add other formats as needed *!*/
+            url('../fonts/dune_rise/Dune_Rise.ttf') format('truetype'),
+            url('../fonts/dune_rise/Dune_Rise.woff') format('woff');
+    font-family: DuneRise; /* Name for the font */
+    font-weight: normal; /* Specify the weight */
+    font-style: normal; /* Specify the style */
+}
+
+@font-face {
+    font-family: 'Linotype-Didot-Pro-Bold-Italic';
+    src: url('../fonts/LinotypeDidot/DidotLTPro-BoldItalic.eot');
+    src: local('Linotype Didot Pro Bold Italic'), local('DidotLTPro-BoldItalic'),
+    url('../fonts/LinotypeDidot/DidotLTPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/LinotypeDidot/DidotLTPro-BoldItalic.woff2') format('woff2'),
+    url('../fonts/LinotypeDidot/DidotLTPro-BoldItalic.woff') format('woff'),
+    url('../fonts/LinotypeDidot/DidotLTPro-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Linotype-Didot-Pro-Italic';
+    src: url('../fonts/LinotypeDidot/DidotLTPro-Italic.eot');
+    src: local('Linotype Didot Pro Italic'), local('DidotLTPro-Italic'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Italic.woff2') format('woff2'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Italic.woff') format('woff'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Italic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Linotype-Didot-Pro';
+    src: url('../fonts/LinotypeDidot/DidotLTPro-Roman.eot');
+    src: local('Linotype Didot Pro Roman'), local('DidotLTPro-Roman'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Roman.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Roman.woff2') format('woff2'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Roman.woff') format('woff'),
+    url('../fonts/LinotypeDidot/DidotLTPro-Roman.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Futura Medium';
+    src: url('../fonts/futura/Futura Medium.ttf') format('truetype'),
+    url('../fonts/futura/Futura Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+.background {
+    background-color: #371D1E;
+    background-image: url('../img/microsoft-bing-logo-1749476115.png');
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    width: 100%;
+    height: auto; /* Sets the height to 100% of the viewport height */
+
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 0;
+}
+
+.sideBar {
+    width: 35vw;
+}
+
+.mainBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /*background-color: #1a100d;*/
+
+    width: 75vw;
+    height: 100vh;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    /*padding-top: 3vh;*/
+}
+
+.mainBody>* {
+    margin: 0px 0;
+}
+
+.mainImage {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.headerText {
+    color: #E7AE4F;
+    font-family: "Playwrite CA", cursive, serif;
+    margin: 10px 0px;
+}
+
+.title {
+    font-size: 3em;
+    margin: 5vh 0vh;
+    text-align: center;
+}
+
+.mainText {
+    text-align: center;
+    font-family: "Linotype-Didot-Pro-Italic", serif;
+    font-weight: normal;
+    font-size: large;
+    color: black;
+}
+
+.searchBox {
+    width: 25vw;
+    height: 1.2em;
+    font-family: "Linotype-Didot-Pro", serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #dedede;
+    font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: #fff !important;
+        color: #000 !important;
+        /* Black prints faster */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
