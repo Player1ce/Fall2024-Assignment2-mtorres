@@ -254,7 +254,7 @@ textarea {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /*background-color: #1a100d;*/
+    background-color: #22283D;
 
     width: 75vw;
     height: 100vh;
@@ -276,7 +276,8 @@ textarea {
 }
 
 .headerText {
-    color: #E7AE4F;
+    color: #FEAF30;
+    /*color: #E7AE4F;*/
     font-family: "Playwrite CA", cursive, serif;
     margin: 10px 0px;
 }
@@ -296,12 +297,52 @@ textarea {
 }
 
 .searchBox {
+    flex-shrink: 0;
     width: 25vw;
-    height: 1.2em;
+    height: 1.3em;
+    resize: both;
     font-family: "Linotype-Didot-Pro", serif;
+    font-size: 16px;
+}
+
+.searchResults {
+    height: fill;
+    width: 75vw;
+    overflow-y: scroll;
+    
+    background-color: #2c3034;
+    
+    border: 1px solid #2c3034;
+    border-radius: 20px;
+
+    scrollbar-color: darkgray lightgray; /* Thumb color, Track color */  
+    scrollbar-width: thin;
+}
+
+.searchResults::-webkit-scrollbar {
+    border-radius: 10px;
+}
+
+.searchResults > p {
+    font-family: "Linotype-Didot-Pro-Italic", serif;
+    color: #a6a6a6;
+}
+
+.searchResults > p > a {
+    color: #bbeafa;    
+}
+.searchResults > p > a:active {
+    color: mediumpurple;    
 }
 
 ul {
+
+    display: flex;
+    flex-direction: row;
+    align-content:  center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
     list-style-type: none;
     padding: 0;
 }

@@ -19,30 +19,28 @@
     
         <h1 class="headerText title">Almost as Bad as Bing</h1>
     
-        <label for="Query" class="mainText">Search here</label>
-        <textarea id="Query" class="searchBox"></textarea>
+        <label for="query" class="mainText">Search Here</label>
+        <textarea id="query" class="searchBox"></textarea>
         
         <ul>
-            
-        <li><button id="searchButton">Search</button></li>
-        <li><button>Get Current Time</button></li>
-        <li><button>I'm Feeling Lucky</button></li>
-            
+            <li><button id="searchButton">Search</button></li>
+            <li><button id="timeButton">Get Current Time</button></li>
+            <li><button id="luckyButton">I'm Feeling Lucky</button></li>
         </ul>
-            
-        <div id="searchResults"></div>
-        <div id="time"></div>
+
+        <div id="time" class="ui-helper-hidden"></div>
+        <div id="searchResults" class="searchResults ui-helper-hidden"></div>
         
     </div>
     
     <div class="sideBar"></div>
 
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.0/themes/smoothness/jquery-ui.css" integrity="sha384-AUxBc4TYOEuk4Hp24650vW1R1zXkuFE8IK5cgdi5qyXRKuc1Xx2ndBiefujL0Qho" crossorigin="anonymous">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js" integrity="sha384-8EM386r8XMMzwGPUxfGNr6c1wIOYnPQBJ6VFxzKCZeklpQarHoZGB40kdNDA3gYr" crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.0/themes/smoothness/jquery-ui.css" integrity="sha384-AUxBc4TYOEuk4Hp24650vW1R1zXkuFE8IK5cgdi5qyXRKuc1Xx2ndBiefujL0Qho" crossorigin="anonymous">
+
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 
