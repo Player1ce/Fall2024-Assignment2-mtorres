@@ -306,7 +306,6 @@ textarea {
 }
 
 .searchResults {
-    height: fill;
     width: 75vw;
     overflow-y: scroll;
     
