@@ -230,10 +230,41 @@ textarea {
 
 .background {
     background-color: #371D1E;
-    background-image: url('../img/microsoft-bing-logo-1749476115.png');
-    background-size: cover; /* Ensures the image covers the entire div */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    /*background-image: url('../img/microsoft-bing-logo-1749476115.png');*/
+    
+    /*background-repeat: repeat;*/
+    /*background-size: 4vh;*/
+
+    background-image:
+            url('../img/microsoft-bing-logo-1749476115-dark.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png'),
+            url('../img/microsoft-bing-logo-1749476115.png');
+    background-position:
+            0 0,
+            10vw 5vh,
+            20vw 10vh,
+            30vw 15vh,
+            40vw 20vh,
+            50vw 25vh,
+            60vw 30vh,
+            70vw 35vh,
+            80vw 40vh,
+            90vw 45vh,
+            100vw 50vh;
+    background-repeat: repeat-y;
+    background-size: 11vw 11vh;
+
+    /*background-size: cover; !* Ensures the image covers the entire div *!*/
+    /*background-repeat: no-repeat; !* Prevents the image from repeating *!*/
+    
+    
     width: 100%;
     height: auto; /* Sets the height to 100% of the viewport height */
 
@@ -250,18 +281,25 @@ textarea {
 }
 
 .mainBody {
+    margin: 3vh 0;
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: #22283D;
 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
     width: 75vw;
-    height: 100vh;
+    height: 94vh;
+    
+    border-radius: 30px;
 
     padding-left: 5%;
     padding-right: 5%;
     /*padding-top: 3vh;*/
+    overflow: hidden;
 }
 
 .mainBody>* {
@@ -290,10 +328,11 @@ textarea {
 
 .mainText {
     text-align: center;
-    font-family: "Linotype-Didot-Pro-Italic", serif;
+    font-family: "Playwrite CA", cursive, serif;
+    /*font-family: "Linotype-Didot-Pro-Italic", serif;*/
     font-weight: normal;
     font-size: large;
-    color: black;
+    color: #FEAF30;
 }
 
 .searchBox {

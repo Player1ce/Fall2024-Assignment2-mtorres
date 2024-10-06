@@ -47,7 +47,7 @@ $(document).ready(function() {
     }
     
     function displayTime() {
-        $('#time').html(getCurrentTime()).show()
+        $('#time').html(getCurrentTime()).dialog()
     }
 
     document.getElementById("query").addEventListener("keydown", function(event) {
