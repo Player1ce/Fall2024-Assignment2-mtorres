@@ -77,7 +77,32 @@ $(document).ready(function() {
             window.location.href = $('#searchResults').find('p:first a:first').attr("href");
         }
         else {
-            alert("No search to go to.");
+            var q_val = $('#query').val();
+            if (!(q_val.length === 0)) {
+                var params = {
+                    'q': q_val,
+                    'count': 1,
+                    'offset': 0,
+                    'mkt': 'en-us'
+                };
+
+                $.ajax({
+                    url: 'https://api.bing.microsoft.com/v7.0/search?' + $.param(params),
+                    type: 'GET',
+                    headers: {
+                        'Ocp-Apim-Subscription-Key': 'd0dac8ad9bba4824a3ad020479a946e7'
+                    }
+                })
+                    .done(function (data) {
+                        window.location.href = data.webPages.value[0].url;
+                    })
+                    .fail(function () {
+                        alert('error');
+                    });
+            }
+            else {
+                alert("You need to give a search query to use the lucky button.")
+            }
         }
     }
     

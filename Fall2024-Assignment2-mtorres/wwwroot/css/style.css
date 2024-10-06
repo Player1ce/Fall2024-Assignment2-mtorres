@@ -156,8 +156,6 @@ textarea {
     font-style: italic;
 }
 
- /*<uniquifier>: Use a unique and descriptive class name*/
- /*<weight>: Use a value from 100 to 400*/
 
 .playwrite-ca-normal {
                    font-family: "Playwrite CA", cursive;
@@ -166,6 +164,31 @@ textarea {
                    font-style: normal;
                }
 
+
+.cutive-regular {
+    font-family: "Cutive", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.gorditas-regular {
+    font-family: "Gorditas", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.gorditas-bold {
+    font-family: "Gorditas", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.mr-de-haviland-regular {
+    font-family: "Mr De Haviland", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
 
 @font-face {
     src:
@@ -228,27 +251,53 @@ textarea {
    ========================================================================== */
 
 .scrollable {
-    overflow-y: hidden;
+    scrollbar-gutter: stable;
+    overflow: hidden;
 }
 
 .scrollable:hover {
-    overflow-y: auto; /* Show scrollbar on hover */
+    overflow: auto;
+    scrollbar-gutter: stable;
     
+    scroll-behavior: smooth;
+}
+
+.scrollable-vertical {
+    scrollbar-gutter: stable;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.scrollable-vertical:hover {
+    overflow-y: auto; /* Show scrollbar on hover */
+    scrollbar-gutter: stable;
+    
+    scroll-behavior: smooth;
+}
+
+.scrollable-horizontal {
+    scrollbar-gutter: stable;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.scrollable-horizontal:hover {
+    overflow-x: auto; /* Show scrollbar on hover */
+
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
 }
 
-/* Hide scrollbar for WebKit browsers */
 .scrollable::-webkit-scrollbar {
-    width: 0; /* Hide scrollbar */
-}
+    width: 8px;
+    border-radius: 10px;
 
-.scrollable:hover::-webkit-scrollbar {
-    width: 8px; /* Show scrollbar on hover */
+    color: transparent;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.5); /* Customize scrollbar thumb color */
+    background-color: var(--scrollbar-2);
+    border-radius: 10px;
 }
 
 /* ==========================================================================
@@ -261,6 +310,15 @@ textarea {
     --main-color: #007FC6;
     --accent-color: #FEAF30;
     --text-color: #22283D;
+    
+    --scrollbar-1: rgba(245, 244, 242, 0.5);
+    --scrollbar-2: rgba(34, 40, 61, 0.5);
+
+    --shadow: rgba(0, 0, 0, 0.5);
+    
+    --stylistic-font: "Mr De Haviland", cursive;
+    --header-font: "Gorditas", cursive;
+    --body-font: "Cutive", cursive;
 
     --bg-image: url('../img/microsoft-bing-logo-1749476115-light.png');
 }
@@ -272,7 +330,19 @@ textarea {
     --accent-color: #007FC6;
     --text-color: #F6F5F4;
 
+    --scrollbar-1: rgba(34, 40, 61, 0.5);
+    --scrollbar-2: rgba(245, 244, 242, 0.5);
+    
+
     --bg-image: url('../img/microsoft-bing-logo-1749476115-dark-2.png');
+}
+
+.shadowed-main {
+    box-shadow: 0px 0px 5px 0px var(--shadow);
+}
+
+.shadowed-alt {
+    box-shadow: 0px 0px 5px 0px var(--shadow);
 }
 
 .background {
@@ -339,8 +409,12 @@ textarea {
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
-    width: 100vw;
+    width: 50vw;
     height: 94vh;
+    
+    min-width: 400px;
+    
+    flex-shrink: 0;
     
     border-radius: 30px;
 
@@ -364,32 +438,35 @@ textarea {
 .headerText {
     color: var(--accent-color);
     /*color: #E7AE4F;*/
-    font-family: "Playwrite CA", cursive, serif;
+    /*font-family: "Playwrite CA", cursive, serif;*/
+    font-family: var(--stylistic-font), serif;
     margin: 10px 0px;
 }
 
 .title {
-    font-size: 3em;
+    font-size: 4em;
     margin: 5vh 0;
     text-align: center;
 }
 
 .mainText {
     text-align: center;
-    font-family: "Playwrite CA", cursive, serif;
-    /*font-family: "Linotype-Didot-Pro-Italic", serif;*/
+    /*font-family: "Playwrite CA", cursive, serif;*/
+    font-family: var(--stylistic-font), serif;
     font-weight: bold;
-    font-size: large;
+    font-size: 2.5em;
     color: var(--accent-color);
 }
 
 .searchBox {
     flex-shrink: 0;
     width: 70%;
+    font-family: var(--header-font), serif;
+    font-size: 1.5em;
+    
+    
     height: 1.3em;
-    resize: both;
-    font-family: "Linotype-Didot-Pro", serif;
-    font-size: 16px;
+    resize: none;
     
     border: hidden;
     
@@ -402,37 +479,37 @@ textarea {
 .searchResults {
     width: 90%;
     margin: 2.5vh 0;
-    overflow-y: hidden;
     
-    /*background-color: #2c3034;*/
     background-color: var(--background-color);
     
     padding: 0 5%;
     
     border-radius: 20px;
-
-    scrollbar-color: darkgray lightgray; /* Thumb color, Track color */  
-    scrollbar-width: thin;
+    
+    min-height: 100px;
     
 }
 
-.searchResults::-webkit-scrollbar {
-    border-radius: 10px;
-}
 
 .searchResults > p {
-    font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
-    /*color: #a6a6a6;*/
+    /*font-family: "Linotype-Didot-Pro-Bold-Italic", serif;*/
+    font-family: var(--body-font), serif;
+    
     color: var(--text-color);
 }
 
 .searchResults > p > a {
     /*color: #bbeafa;    */
     color: var(--main-color);    
-    font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
+    
+    /*font-family: "Linotype-Didot-Pro-Bold-Italic", serif;*/
+    font-family: var(--body-font), serif;
 }
 
 .searchResults > p > a:active {
+    color: mediumpurple;    
+}
+.searchResults > p > a:hover {
     color: mediumpurple;    
 }
 
@@ -443,7 +520,6 @@ textarea {
 }
 
 ul {
-
     display: flex;
     flex-direction: row;
     align-content:  center;
@@ -458,8 +534,9 @@ li {
     display: inline-block;
     margin-right: 10px;
     font-size: 24px;
-    color: #dedede;
-    font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
+    /*font-family: "Linotype-Didot-Pro-Bold-Italic", serif;*/
+    font-family: var(--header-font), serif;
+    /*font-weight: bold;*/
 }
 
 button {
@@ -467,6 +544,9 @@ button {
     border: 5px solid var(--main-color);
     border-radius: 10px;
     font-family: inherit;
+    
+    color: var(--background-color);
+    
 }
 
 /* ==========================================================================
