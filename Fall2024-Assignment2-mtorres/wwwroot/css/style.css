@@ -228,14 +228,14 @@ textarea {
    ========================================================================== */
 
 .scrollable {
-    width: 300px; /* Set your desired width */
-    height: 200px; /* Set your desired height */
-    overflow-y: hidden; /* Hide scrollbar by default */
-    position: relative;
+    overflow-y: hidden;
 }
 
 .scrollable:hover {
     overflow-y: auto; /* Show scrollbar on hover */
+    
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 /* Hide scrollbar for WebKit browsers */
@@ -258,9 +258,9 @@ textarea {
 :root {
     --background-color: #F6F5F4;
     --background-color-2: #22283D;
-    --background-color-3: #2c3034;
     --main-color: #007FC6;
     --accent-color: #FEAF30;
+    --text-color: #22283D;
 
     --bg-image: url('../img/microsoft-bing-logo-1749476115-light.png');
 }
@@ -268,9 +268,9 @@ textarea {
 .dark-theme {
     --background-color: #22283D;
     --background-color-2: #F6F5F4;
-    --background-color-3: #2c3034;
     --main-color: #FEAF30;
     --accent-color: #007FC6;
+    --text-color: #F6F5F4;
 
     --bg-image: url('../img/microsoft-bing-logo-1749476115-dark-2.png');
 }
@@ -400,18 +400,18 @@ textarea {
 .searchResults {
     width: 90%;
     margin: 2.5vh 0;
-    overflow-y: scroll;
+    overflow-y: hidden;
     
     /*background-color: #2c3034;*/
-    background-color: var(--background-color-3);
+    background-color: var(--background-color);
     
     padding: 0 5%;
     
-    border: 1px solid #2c3034;
     border-radius: 20px;
 
     scrollbar-color: darkgray lightgray; /* Thumb color, Track color */  
     scrollbar-width: thin;
+    
 }
 
 .searchResults::-webkit-scrollbar {
@@ -419,9 +419,9 @@ textarea {
 }
 
 .searchResults > p {
-    font-family: "Linotype-Didot-Pro-Italic", serif;
+    font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
     /*color: #a6a6a6;*/
-    color: var(--background-color);
+    color: var(--text-color);
 }
 
 .searchResults > p > a {
@@ -429,8 +429,15 @@ textarea {
     color: var(--main-color);    
     font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
 }
+
 .searchResults > p > a:active {
     color: mediumpurple;    
+}
+
+.imageResult {
+    width: 20vh;
+    height: auto;
+    margin: 10px 10px;
 }
 
 ul {

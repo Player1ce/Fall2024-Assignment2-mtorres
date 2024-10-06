@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 $(document).ready(function() {
 
-    var searched = false
+    var searched = false;
+    
     function apiSearch() {
         var params = {
             'q': $('#query').val(),
@@ -32,7 +33,7 @@ $(document).ready(function() {
 
                 $('#searchResults').html(results).show();
                 
-                searched = true
+                searched = true;
             })
             .fail(function () {
                 alert('error');
@@ -59,11 +60,12 @@ $(document).ready(function() {
                 data.value.forEach(function (image) {
                     const imgElement = $('<img>')
                         .attr('src', image.thumbnailUrl)
-                        .addClass('image-result');
+                        .addClass('imageResult');
+                    
                     $('#searchResults').append(imgElement);
                 })
 
-                searched = true
+                searched = false;
             })
             .fail(function () {
                 alert('error');
@@ -85,7 +87,7 @@ $(document).ready(function() {
     }
     
     function displayTime() {
-        $('#time').html(getCurrentTime()).dialog()
+        $('#time').html(getCurrentTime()).dialog();
     }
 
     document.getElementById("query").addEventListener("keydown", function(event) {
@@ -102,6 +104,7 @@ $(document).ready(function() {
 
     function toggleTheme() {
         document.body.classList.toggle('dark-theme');
+        
         if (document.body.classList.contains('dark-theme')) {
             localStorage.setItem('theme', 'dark');
         } else {
