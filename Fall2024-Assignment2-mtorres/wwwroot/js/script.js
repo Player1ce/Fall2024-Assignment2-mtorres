@@ -92,13 +92,9 @@ $(document).ready(function() {
 
     document.getElementById("query").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            if (event.shiftKey) {
-                // Action for Shift+Enter
-            } else {
-                // Action for Enter
-                event.preventDefault(); // Prevent the default action (form submission)
-                apiSearch();
-            }
+            // Action for Enter
+            event.preventDefault(); // Prevent the default action (form submission)
+            apiSearch();
         }
     });
 

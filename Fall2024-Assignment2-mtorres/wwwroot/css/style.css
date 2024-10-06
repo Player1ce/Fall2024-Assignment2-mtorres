@@ -391,6 +391,8 @@ textarea {
     font-family: "Linotype-Didot-Pro", serif;
     font-size: 16px;
     
+    border: hidden;
+    
     border-radius: 15px;
     padding: 0 10px;
     
