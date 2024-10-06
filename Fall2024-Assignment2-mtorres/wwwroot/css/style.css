@@ -224,28 +224,75 @@ textarea {
 
 
 /* ==========================================================================
+   Author's custom configurations
+   ========================================================================== */
+
+.scrollable {
+    width: 300px; /* Set your desired width */
+    height: 200px; /* Set your desired height */
+    overflow-y: hidden; /* Hide scrollbar by default */
+    position: relative;
+}
+
+.scrollable:hover {
+    overflow-y: auto; /* Show scrollbar on hover */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.scrollable::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar */
+}
+
+.scrollable:hover::-webkit-scrollbar {
+    width: 8px; /* Show scrollbar on hover */
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5); /* Customize scrollbar thumb color */
+}
+
+/* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
+:root {
+    --background-color: #F6F5F4;
+    --background-color-2: #22283D;
+    --background-color-3: #2c3034;
+    --main-color: #007FC6;
+    --accent-color: #FEAF30;
+
+    --bg-image: url('../img/microsoft-bing-logo-1749476115-light.png');
+}
+
+.dark-theme {
+    --background-color: #22283D;
+    --background-color-2: #F6F5F4;
+    --background-color-3: #2c3034;
+    --main-color: #FEAF30;
+    --accent-color: #007FC6;
+
+    --bg-image: url('../img/microsoft-bing-logo-1749476115-dark-2.png');
+}
 
 .background {
-    background-color: #371D1E;
+    background-color: var(--background-color);
     /*background-image: url('../img/microsoft-bing-logo-1749476115.png');*/
     
     /*background-repeat: repeat;*/
     /*background-size: 4vh;*/
 
     background-image:
-            url('../img/microsoft-bing-logo-1749476115-dark.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png'),
-            url('../img/microsoft-bing-logo-1749476115.png');
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image),
+            var(--bg-image);
     background-position:
             0 0,
             10vw 5vh,
@@ -265,7 +312,7 @@ textarea {
     /*background-repeat: no-repeat; !* Prevents the image from repeating *!*/
     
     
-    width: 100%;
+    width: 100vw;
     height: auto; /* Sets the height to 100% of the viewport height */
 
     display: flex;
@@ -275,6 +322,7 @@ textarea {
     align-items: stretch;
     margin: 0;
 }
+
 
 .sideBar {
     width: 35vw;
@@ -287,11 +335,11 @@ textarea {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #22283D;
+    background-color: var(--background-color-2);
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
-    width: 75vw;
+    width: 100vw;
     height: 94vh;
     
     border-radius: 30px;
@@ -314,7 +362,7 @@ textarea {
 }
 
 .headerText {
-    color: #FEAF30;
+    color: var(--accent-color);
     /*color: #E7AE4F;*/
     font-family: "Playwrite CA", cursive, serif;
     margin: 10px 0px;
@@ -322,7 +370,7 @@ textarea {
 
 .title {
     font-size: 3em;
-    margin: 5vh 0vh;
+    margin: 5vh 0;
     text-align: center;
 }
 
@@ -330,25 +378,34 @@ textarea {
     text-align: center;
     font-family: "Playwrite CA", cursive, serif;
     /*font-family: "Linotype-Didot-Pro-Italic", serif;*/
-    font-weight: normal;
+    font-weight: bold;
     font-size: large;
-    color: #FEAF30;
+    color: var(--accent-color);
 }
 
 .searchBox {
     flex-shrink: 0;
-    width: 25vw;
+    width: 70%;
     height: 1.3em;
     resize: both;
     font-family: "Linotype-Didot-Pro", serif;
     font-size: 16px;
+    
+    border-radius: 15px;
+    padding: 0 10px;
+    
+    margin-bottom: 5px;
 }
 
 .searchResults {
-    width: 75vw;
+    width: 90%;
+    margin: 2.5vh 0;
     overflow-y: scroll;
     
-    background-color: #2c3034;
+    /*background-color: #2c3034;*/
+    background-color: var(--background-color-3);
+    
+    padding: 0 5%;
     
     border: 1px solid #2c3034;
     border-radius: 20px;
@@ -363,11 +420,14 @@ textarea {
 
 .searchResults > p {
     font-family: "Linotype-Didot-Pro-Italic", serif;
-    color: #a6a6a6;
+    /*color: #a6a6a6;*/
+    color: var(--background-color);
 }
 
 .searchResults > p > a {
-    color: #bbeafa;    
+    /*color: #bbeafa;    */
+    color: var(--main-color);    
+    font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
 }
 .searchResults > p > a:active {
     color: mediumpurple;    
@@ -391,6 +451,13 @@ li {
     font-size: 24px;
     color: #dedede;
     font-family: "Linotype-Didot-Pro-Bold-Italic", serif;
+}
+
+button {
+    background-color: var(--main-color);
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
+    font-family: inherit;
 }
 
 /* ==========================================================================

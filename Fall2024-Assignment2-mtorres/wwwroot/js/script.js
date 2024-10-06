@@ -1,3 +1,10 @@
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+});
+
 $(document).ready(function() {
 
     var searched = false
@@ -25,6 +32,37 @@ $(document).ready(function() {
 
                 $('#searchResults').html(results).show();
                 
+                searched = true
+            })
+            .fail(function () {
+                alert('error');
+            });
+    }
+
+    function apiImageSearch() {
+        var params = {
+            'q': $('#query').val(),
+            'count': 50,
+            'offset': 0,
+            'mkt': 'en-us'
+        };
+
+        $.ajax({
+            url: 'https://api.bing.microsoft.com/v7.0/images/search?' + $.param(params),
+            type: 'GET',
+            headers: {
+                'Ocp-Apim-Subscription-Key': 'd0dac8ad9bba4824a3ad020479a946e7'
+            }
+        })
+            .done(function (data) {
+                $('#searchResults').empty().show()
+                data.value.forEach(function (image) {
+                    const imgElement = $('<img>')
+                        .attr('src', image.thumbnailUrl)
+                        .addClass('image-result');
+                    $('#searchResults').append(imgElement);
+                })
+
                 searched = true
             })
             .fail(function () {
@@ -62,8 +100,21 @@ $(document).ready(function() {
         }
     });
 
-    $('#searchButton').click(apiSearch)
-    $('#timeButton').click(displayTime)
-    $('#luckyButton').click(goToFirst)
+    function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+        if (document.body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.removeItem('theme');
+        }
+    }
+
+
+    $('#title').click(toggleTheme);
+    $('#searchButton').click(apiSearch);
+    $('#imageSearchButton').click(apiImageSearch);
+    $('#timeButton').click(displayTime);
+    $('#luckyButton').click(goToFirst);
+    
 
 });
