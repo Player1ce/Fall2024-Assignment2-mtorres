@@ -5,6 +5,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
+let apiKey;
+
+
+async function getBingApiKey() {
+    try {
+        const response = await fetch('/api/config/bingapikey');
+        if (response === null) {
+            console.log("Response is null")
+        }
+
+        const data = await response.json();
+        
+        apiKey = data.apiKey;
+    } catch (error) {
+        console.error('Error fetching the API key:', error);
+    }
+}
+
+// window.onload = getBingApiKey;
+
 $(document).ready(function() {
 
     var searched = false;
@@ -17,10 +37,16 @@ $(document).ready(function() {
             'mkt': 'en-us'
         };
 
+        // if (!apiKey) {
+        //     console.error('API Key is undefined');
+        //     return;
+        // }
+
         $.ajax({
             url: 'https://api.bing.microsoft.com/v7.0/search?' + $.param(params),
             type: 'GET',
             headers: {
+                // 'Ocp-Apim-Subscription-Key': apiKey
                 'Ocp-Apim-Subscription-Key': 'd0dac8ad9bba4824a3ad020479a946e7'
             }
         })
@@ -47,11 +73,16 @@ $(document).ready(function() {
             'offset': 0,
             'mkt': 'en-us'
         };
+        
+        if (!apiKey) {
+            console.log("apiKey not found");
+        }
 
         $.ajax({
             url: 'https://api.bing.microsoft.com/v7.0/images/search?' + $.param(params),
             type: 'GET',
             headers: {
+                // 'Ocp-Apim-Subscription-Key': apiKey
                 'Ocp-Apim-Subscription-Key': 'd0dac8ad9bba4824a3ad020479a946e7'
             }
         })

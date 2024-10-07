@@ -1,7 +1,18 @@
+using Fall2024_Assignment2_mtorres.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Configuration.AddEnvironmentVariables();
+
+
+var bingApiKey = Environment.GetEnvironmentVariable("BING_API_KEY");
+
+Console.WriteLine($"BING_API_KEY: {bingApiKey}");
+Console.Out.WriteLine($"BING_API_KEY: {bingApiKey}");
+
+builder.Services.AddSingleton(new BingApiSettings { ApiKey = bingApiKey });
 
 var app = builder.Build();
 
